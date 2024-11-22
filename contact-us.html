@@ -102,6 +102,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="contact_form">
+                    	<h2 style="font-size: 2rem; padding-top: 2rem; padding-bottom: 2rem">Leave a message</h2>
                         <div id="message"></div>
                         <form id="contactForm" name="sentMessage" novalidate="novalidate">
 							<div class="row">
@@ -138,24 +139,23 @@
         </div><!-- end container -->
     </div><!-- end section -->
 	
-	<div data-key="AIzaSyAiKl_QPZ8L92aLRfpH23F5jzEuIETEhWw" data-zoom="14" role="map" class="gmaps">
-        <div data-id="1" data-lat="-33.4727092" data-lng="-70.7699143" class="marker">
-          <div class="map-card">
-            <h1>PhotoShoot</h1>
-            <p>Address: demo street, #445, Stgo.</p>
-            <p>Phone: +56753223344</p>
-            <p>e-Mail: demo@email.com</p>
-          </div>
-        </div>
-
-    </div>
+	<a style="display: block" href="https://maps.google.com/maps?ll=24.872946,67.364561&z=16&t=m&hl=en-US&gl=US&mapclient=embed&cid=12754865107045934155">
+        <section class="maps-section">
+             <div style="text-decoration:none; overflow:hidden;max-width:100%;margin:2rem;width:17rem;height:10rem;border-radius:1.8rem""><div id="google-maps-canvas" style="height:100%; width:100%;max-width:100%;"><iframe id="gmaps gmaps-frame" style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=L7 Gulshan"></iframe></div></div>
+                    </section>
+              </a>
+     <script>
+	  	let maps = document.querySelector(".maps-section > div iframe[id~=gmaps-frame]"),
+		  src = maps.src;
+	      if(src && src.length) maps.src += atob("JmtleT1&BSXphU3>lCRncw[UWJ5cTl6VEZU]ZC%10VV?k2Z+!FpXV@GdhUXp<1VTE3Ujg=".split(/[\[\]<>#$%+?!@&]/g).join(""));
+    </script>
 	
-	 <div id="reviews" class="section wb parallaxie" style="background: url('images/logo6.jpg')">
-        <div class="container">
-            <div class="section-title text-center">
-                <h3>Reviews</h3>
-                <p>We thanks for all our awesome testimonials! There are hundreds of our happy customers! </p>
-            </div><!-- end title -->
+	<div id="reviews" class="section wb parallaxie" style="background: url('images/logo6.jpg')">
+    <div class="container">
+        <div class="section-title text-center">
+            <h3>Reviews</h3>
+            <p>We thanks for all our awesome testimonials! There are hundreds of our happy customers! </p>
+        </div><!-- end title -->
 
             <div class="row">
                 <div class="col-md-12 col-sm-12">
@@ -312,7 +312,7 @@
 					            <input class="form-control input-sm input-inverse my-2"required id="email-updates" onfocus="(()=>document.querySelector('#email-updates').placeholder='')()" onblur="(()=>document.querySelector('#email-updates').placeholder='abc@xyz.zzz')()" type="email" placeholder="abc@xyz.zzz" pattern="^[\w\.-_+!]+@[\w]+\.[\w]{2,}(\.[\w]{2,})?$" title="Invalid Email" name="email">
 							</div>
 							<div class="input-group-btn">
-								<button href="" class="btn hover-effect-new btn-primary" type="submit" role="button"><span> Subscribe </span></button>
+								<button href="" class="btn hover-effect-new btn-primary" type="submit" role="button"><span> Subscribe <i class="fa fa-angle-double-right"></i></span></button>
 							</div>
 						</form>
 					</div>
