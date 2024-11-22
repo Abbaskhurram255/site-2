@@ -35,6 +35,14 @@ html, body{
 	height: 100%;
 }
 
+button#sendMessageButton {
+	color: white;
+	background: #121;
+	&:hover{
+		color: #121;
+	}
+}
+
 body.demos .section {
     background: url(images/bg.png) repeat top center #f2f3f5;
 }
