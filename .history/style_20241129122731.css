@@ -43,12 +43,6 @@ button#sendMessageButton {
 	}
 }
 
-button.btn.btn-primary.hover-effect-new {
-    &:not(:active):is(:hover, :focus){
-        color: #121;
-    }
-}
-
 body.demos .section {
     background: url(images/bg.png) repeat top center #f2f3f5;
 }

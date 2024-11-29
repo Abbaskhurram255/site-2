@@ -44,7 +44,7 @@ button#sendMessageButton {
 }
 
 button.btn.btn-primary.hover-effect-new {
-    &:not(:active):is(:hover, :focus){
+    &:is(:hover, :focus, :active){
         color: #121;
     }
 }

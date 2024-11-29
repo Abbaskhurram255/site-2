@@ -43,12 +43,6 @@ button#sendMessageButton {
 	}
 }
 
-button.btn.btn-primary.hover-effect-new {
-    &:not(:active):is(:hover, :focus){
-        color: #121;
-    }
-}
-
 body.demos .section {
     background: url(images/bg.png) repeat top center #f2f3f5;
 }
@@ -192,11 +186,11 @@ img{
 -------------------------------------------------------------------*/
 
 .first {
-    clear: both;
+    clear: both
 }
 
 .last {
-    margin-right: 0;
+    margin-right: 0
 }
 
 .alignnone {
@@ -236,7 +230,7 @@ a img.alignleft {
 a img.aligncenter {
     display: block;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto
 }
 
 .wp-caption {
@@ -305,6 +299,7 @@ a img.aligncenter {
     top: 5px;
     width: auto;
     z-index: 100000;
+    /* Above WP toolbar. */
 }
 
 
