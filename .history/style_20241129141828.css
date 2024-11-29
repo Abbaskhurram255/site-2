@@ -2959,7 +2959,7 @@ select.mobile-device {
 }
 
 .pricingTable:hover {
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .pricingTable .pricingTable-header {
