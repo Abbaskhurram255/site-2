@@ -350,14 +350,12 @@ li {
 	}
 }
 
-#mainNav img {
-	width: 3rem !important;
+@media screen and (max-width: 1007px) {
+	#reviews{
+		background-attachment: fixed !important;
+		background-position: center !important;
+	}
 }
 
-.burger {
-	background: rgba(0, 77, 44, .6);
-}
 
-.burger.burger--close {
-	background: #ffba1f !important;
-}
+
