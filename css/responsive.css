@@ -2,11 +2,21 @@
     Version: 1.0
 /****************************************** */
 
+/*styles for the arrow icon from FA*/
 .fa-arrow-up {
 	position: relative;
-	top: .3rem !important;
+	top: .3rem;
 }
 
+/*styles for slider arrows*/
+.arrows .arrow {
+	&.prev {}
+
+	&.next {
+		position: relative;
+		top: -.2rem;
+	}
+}
 
 button,
 .custom-file-upload,
@@ -166,6 +176,8 @@ li {
 		position: relative;
 		top: .2rem;
 	}
+
+
 
 	#mainNav {
 		background-color: #ffffff;
