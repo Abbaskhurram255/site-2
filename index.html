@@ -71,7 +71,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container-fluid">
         <a class="navbar-brand js-scroll-trigger" href="index.html">
-			<img class="img-fluid" src="images/logo.jpg" style="border-radius: 50%; width: 30%; height: 70%; position:relative; top: -.2rem;" alt="" />
+			<img class="img-fluid" type="image/png" src="uploads/lo.png" style="border-radius: 50%; width: 30%; height: 70%; position:relative; top: -.2rem;" alt="logo" />
 		</a>
       </div>
     </nav>
@@ -117,7 +117,7 @@
 		</div>
 	</div>
 	
-    <div id="about" class="section wb">
+    <div id="about" class="section wb" data-scrolly-top="blurInBottom, duration: 2s" data-scrolly-bottom="blurInLeft, 3s">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -146,7 +146,7 @@
 				<p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p>
 			</div><!-- end title -->
 		
-			<div class="gallery-menu text-center row">
+			<div class="gallery-menu text-center row" data-aos=">
 				<div class="col-md-12">
 					<div class="button-group filter-button-group">
 						<button class="active" data-filter="*">All</button>
@@ -546,6 +546,10 @@
 	<script src="js/zepto.min.js"></script>
 	<script src="js/imagesloaded.pkgd.min.js"></script>
 	<script src="js/slider.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"></script>
+	<script src="https://rawcdn.githack.com/yesiamrocks/scrolly.js/2a3d10b8065c42ad000859cf38ef55e6fff60973/scrolly.min.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>window.onload = () => {scrolly(); AOS.init()}</script>
 
 </body>
 </html>
