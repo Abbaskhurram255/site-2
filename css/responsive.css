@@ -4,7 +4,7 @@
 
 .fa-arrow-up {
 	position: relative;
-	top: .6rem !important;
+	top: .3rem !important;
 }
 
 
@@ -32,7 +32,7 @@ li {
 		-moz-transform: scale(1.1);
 		-ms-transform: scale(1.1);
 		-o-transform: scale(1.1);
-}
+	}
 }
 
 :is(img):not(.news_section .row .box .img-box img) {
@@ -350,11 +350,8 @@ li {
 }
 
 @media screen and (max-width: 1007px) {
-	#reviews{
+	#reviews {
 		background-attachment: fixed !important;
 		background-position: center !important;
 	}
 }
-
-
-
