@@ -26,6 +26,14 @@
     SKELETON
 -------------------------------------------------------------------*/
 
+.arrows .arrow {
+	&.prev {}
+	&.next{
+		position: relative;
+		top: .39rem;
+	}
+}
+
 body {
     color: #999999;
     font-size: 0.875rem;
