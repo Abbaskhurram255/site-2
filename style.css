@@ -57,6 +57,10 @@ button.btn.btn-primary.hover-effect-new {
 	width: 3rem !important;
 }
 
+.owl-nav :is(.owl-prev, .owl-next):hover{
+        box-shadow: -2px 4px 8px 2px rgba(30, 30, 0, .8) !important;
+}
+
 .burger {
 	background: rgba(0, 77, 44, .6);
 }

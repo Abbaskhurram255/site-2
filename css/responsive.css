@@ -9,13 +9,9 @@
 }
 
 /*styles for slider arrows*/
-.arrows .arrow {
-	&.prev {}
-
-	&.next {
-		position: relative;
-		top: -.2rem;
-	}
+.arrows .arrow.next {
+	position: relative;
+	top: -.2rem;
 }
 
 button,
@@ -83,21 +79,27 @@ li {
 		height: 5rem;
 
 		& img {
-			//padding: .2rem !important;
-			width: 8% !important;
+			width: 18% !important;
 		}
+	}
+
+	.burger {
+		top: 1.4rem !important;
 	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
 	#mainNav {
 		background-color: #ffffff;
-		padding: .75rem 10px !important;
+		padding: .25rem .625rem !important;
 
 		& img {
-			//padding: .2rem !important;
-			width: 10% !important;
+			width: 16% !important;
 		}
+	}
+
+	.burger {
+		top: 1rem;
 	}
 
 	.navbar-dark .navbar-brand {
@@ -138,7 +140,7 @@ li {
 	}
 
 	.message-box {
-		margin-bottom: 30px;
+		margin-bottom: 1.875rem;
 	}
 
 	.filter-button-group button {
@@ -162,15 +164,25 @@ li {
 	}
 }
 
+.burger {
+	top: 1.7rem;
+}
+
 @media (max-width: 767px) {
 	#mainNav {
 		padding: .2rem !important;
 
 		& img {
-			//padding: .2rem !important;
-			width: 12% !important;
+			width: 20% !important;
 		}
 	}
+
+	.burger {
+		top: 1.8rem;
+	}
+
+
+
 
 	.fa-arrow-up {
 		position: relative;
@@ -181,7 +193,7 @@ li {
 
 	#mainNav {
 		background-color: #ffffff;
-		padding: 15px 10px;
+		padding: .9375rem .625rem;
 	}
 
 	.navbar-dark .navbar-brand {
@@ -244,15 +256,19 @@ li {
 
 @media only screen and (min-width: 280px) and (max-width: 599px) {
 	#mainNav {
+		padding: 0rem !important;
 		& img {
-			padding: 0rem !important;
 			width: 30% !important;
 		}
 	}
 
-	#mainNav {
-		background-color: #ffffff;
+	.burger {
+		top: 1.5rem;
 	}
+
+	/* #mainNav {
+		background-color: #1ca867;
+	} */
 
 	.navbar-dark .navbar-brand {
 		width: 55%;
@@ -268,23 +284,23 @@ li {
 	}
 
 	.heading h1 {
-		font-size: 28px;
+		font-size: 1.75rem;
 	}
 
 	.heading p {
-		font-size: 14px;
+		font-size: .875rem;
 	}
 
 	.cd-headline.clip span {
-		font-size: 20px;
+		font-size: 1.25rem;
 	}
 
 	.section-title h3 {
-		font-size: 28px;
+		font-size: 1.75rem;
 	}
 
 	.section-title p {
-		font-size: 14px;
+		font-size: .875rem;
 	}
 
 	#clouds {
@@ -292,11 +308,11 @@ li {
 	}
 
 	.message-box {
-		margin-bottom: 30px;
+		margin-bottom: 1.875rem;
 	}
 
 	.filter-button-group button {
-		padding: 12px 27px;
+		padding: .75rem 1.6875rem;
 	}
 
 	.filter-button-group {
@@ -304,7 +320,7 @@ li {
 	}
 
 	.post-box {
-		margin-bottom: 30px;
+		margin-bottom: 1.875rem;
 	}
 
 	.footer-distributed .footer-left {
@@ -312,7 +328,7 @@ li {
 	}
 
 	.message-box h2 {
-		font-size: 22px;
+		font-size: 1.375rem;
 	}
 
 	.skillbar-title {
@@ -324,15 +340,15 @@ li {
 	}
 
 	.pricingTable {
-		margin-bottom: 30px;
+		margin-bottom: 1.875rem;
 	}
 
 	.fat-nav li {
-		font-size: 18px;
+		font-size: 1.125rem;
 	}
 
 	.banner h2 {
-		font-size: 35px;
+		font-size: 2.1875rem;
 	}
 
 	.banner h2::after {
@@ -340,24 +356,34 @@ li {
 	}
 
 	.right-box-pro {
-		margin-bottom: 30px;
+		margin-bottom: 1.875rem;
 	}
 
 	.filter-button-group button {
 		font-weight: 500;
-		font-size: 12px;
+		font-size: .75rem;
 	}
 }
+
+@media only screen and (min-width: 372px) and (max-width: 600) {
+	#mainNav {
+		padding: 0rem !important;
+		& img {
+			width: 20% !important;
+		}
+	}
+
+	.burger {
+		top: 1.5rem;
+	}
+}
+
+
 
 @media only screen and (min-width: 80px) and (max-width: 280px) {
 	#mainNav {
 		display: none;
-		padding: 1rem 10px !important;
-
-		& img {
-			padding: 0rem !important;
-			width: 40% !important;
-		}
+		padding: 1rem .625rem !important;
 	}
 }
 
