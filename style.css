@@ -26,14 +26,6 @@
     SKELETON
 -------------------------------------------------------------------*/
 
-.arrows .arrow {
-	&.prev {}
-	&.next{
-		position: relative;
-		top: .39rem;
-	}
-}
-
 body {
     color: #999999;
     font-size: 0.875rem;
@@ -1825,7 +1817,7 @@ hr.invis1 {
 
 .filter-button-group button.active {
     background: #f9ba1f;
-    color: #fff;
+    color: #500;
 }
 
 .filter-button-group button {
@@ -2949,7 +2941,7 @@ select.mobile-device {
 
 .fa-search, .fa-link {
 	position: relative;
-	top: .5rem;
+	top: .2rem;
 }
 
 .navbar-default .btn-light {
