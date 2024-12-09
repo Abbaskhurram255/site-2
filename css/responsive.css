@@ -4,7 +4,7 @@
 
 .fa-arrow-up {
 	position: relative;
-	top: .2rem;
+	top: .6rem !important;
 }
 
 
@@ -73,7 +73,7 @@ li {
 		height: 5rem;
 
 		& img {
-			padding: .2rem !important;
+			//padding: .2rem !important;
 			width: 8% !important;
 		}
 	}
@@ -82,10 +82,10 @@ li {
 @media (min-width: 768px) and (max-width: 991px) {
 	#mainNav {
 		background-color: #ffffff;
-		padding: 12px 10px !important;
+		padding: .75rem 10px !important;
 
 		& img {
-			padding: .2rem !important;
+			//padding: .2rem !important;
 			width: 10% !important;
 		}
 	}
@@ -154,11 +154,10 @@ li {
 
 @media (max-width: 767px) {
 	#mainNav {
-		padding: 15px !important;
+		padding: .2rem !important;
 
 		& img {
-			padding: .2rem !important;
-			margin: .5rem;
+			//padding: .2rem !important;
 			width: 12% !important;
 		}
 	}
@@ -341,7 +340,7 @@ li {
 @media only screen and (min-width: 80px) and (max-width: 280px) {
 	#mainNav {
 		display: none;
-		padding: 15px 10px !important;
+		padding: 1rem 10px !important;
 
 		& img {
 			padding: 0rem !important;
