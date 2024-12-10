@@ -17,6 +17,22 @@
 	}
 }
 
+.ser-icon:has(.flaticon-wedding-photo, .flaticon-event, .flaticon-image) {
+	transition: transform 2.5s ease;
+	-webkit-transition: transform 2.5s ease;
+	-moz-transition: transform 2.5s ease;
+	-ms-transition: transform 2.5s ease;
+	-o-transition: transform 2.5s ease;
+	&:hover{
+		transform: scale(1.1) translateY(-10px)/* rotate(360deg) */!important;
+		-webkit-transform: scale(1.1) translateY(-10px)/* rotate(360deg) */!important;
+		-moz-transform: scale(1.1) translateY(-10px)/* rotate(360deg) */!important;
+		-ms-transform: scale(1.1) translateY(-10px)/* rotate(360deg) */!important;
+		-o-transform: scale(1.1) translateY(-10px)/* rotate(360deg) */!important;
+		box-shadow: 0 0 10px #222;
+	}
+}
+
 .project .text h1 {
 	letter-spacing: .2rem;
 	font-size: 3.5rem !important;
