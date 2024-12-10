@@ -11,6 +11,12 @@
 	user-select: none;
 }
 
+#gallery .container .section-title h3 a {
+	&:hover{
+		color: #290;
+	}
+}
+
 .project .text h1 {
 	letter-spacing: .2rem;
 	font-size: 3.5rem !important;
