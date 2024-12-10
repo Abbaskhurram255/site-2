@@ -27,7 +27,6 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="css/custom.css">
 <script src="js/modernizr.js"></script> <!-- Modernizr -->
-<link rel="stylesheet" href="css/animate.min.css">
 
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -355,7 +354,7 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="effect-new">
-						<div class="services-inner-box">
+						<div class="services-inner-box wedding-services-box">
 							<div class="ser-icon">
 								<i class="flaticon-wedding-photo"></i>
 							</div>
@@ -367,11 +366,11 @@
 				</div><!-- end col -->
 				<div class="col-md-4">
 					<div class="effect-new">
-						<div class="services-inner-box">
+						<div class="services-inner-box product-services-box">
 							<div class="ser-icon">
 								<i class="flaticon-image"></i>
 							</div>
-							<h2>Portrait photography</h2>
+							<h2>Product photography</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 								ut labore et dolore magna aliqua.</p>
 						</div>
@@ -379,7 +378,7 @@
 				</div><!-- end col -->
 				<div class="col-md-4">
 					<div class="effect-new">
-						<div class="services-inner-box">
+						<div class="services-inner-box misc-services-box">>
 							<div class="ser-icon">
 								<i class="flaticon-event"></i>
 							</div>
@@ -609,7 +608,24 @@
 	<script
 		src="https://rawcdn.githack.com/yesiamrocks/scrolly.js/2a3d10b8065c42ad000859cf38ef55e6fff60973/scrolly.min.js"></script>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script>window.onload = () => { scrolly(); AOS.init() }</script>
+	<script>
+	window.onload = () => { 
+		scrolly(); 
+		AOS.init();
+	 }
+	 document.querySelector('.services-inner-box.wedding-services-box').addEventListener('click', () => {
+		document.querySelector('button[data-filter=\'.photo_a\']').click(); 
+		document.querySelector('#gallery').scrollIntoView({ behavior: 'smooth' });
+	});
+	document.querySelector('.services-inner-box.product-services-box').addEventListener('click', () => {
+			document.querySelector('button[data-filter=\'.photo_b\']').click();
+			document.querySelector('#gallery').scrollIntoView({ behavior: 'smooth' });
+		});
+		document.querySelector('.services-inner-box.misc-services-box').addEventListener('click', () => {
+				document.querySelector('button[data-filter=\'.photo_c\']').click();
+				document.querySelector('#gallery').scrollIntoView({ behavior: 'smooth' });
+			});
+	</script>
 
 </body>
 
