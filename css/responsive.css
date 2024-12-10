@@ -11,6 +11,10 @@
 	user-select: none;
 }
 
+.project .text h1 {
+	letter-spacing: .2rem;
+}
+
 /*styles for the arrow icon from FA*/
 .fa-arrow-up {
 	position: relative;
