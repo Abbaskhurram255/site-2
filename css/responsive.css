@@ -13,6 +13,8 @@
 
 .project .text h1 {
 	letter-spacing: .2rem;
+	font-size: 3.5rem !important;
+	min-width: 100%;
 }
 
 /*styles for the arrow icon from FA*/
@@ -99,6 +101,10 @@ li {
 	.burger {
 		top: 1.4rem !important;
 	}
+
+	.project .text h1 {
+		font-size: 5.5rem !important;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -113,6 +119,12 @@ li {
 
 	.burger {
 		top: 1rem;
+	}
+
+	
+
+	.project .text h1 {
+		font-size: 4rem !important;
 	}
 
 	.navbar-dark .navbar-brand {
