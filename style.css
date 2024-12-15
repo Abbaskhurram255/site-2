@@ -1854,7 +1854,7 @@ hr.invis1 {
 }
 
 .gallery-single img {
-    width: 100%;
+    width: 50%;
     height: auto;
     -webkit-transform: scale(1.6);
     -moz-transform: scale(1.6);

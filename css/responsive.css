@@ -163,23 +163,23 @@ li {
 	}
 
 	.heading h1 {
-		font-size: 28px;
+		font-size: 1.75rem;
 	}
 
 	.heading p {
-		font-size: 14px;
+		font-size: .875rem;
 	}
 
 	.cd-headline.clip span {
-		font-size: 20px;
+		font-size: 1.25rem;
 	}
 
 	.section-title h3 {
-		font-size: 28px;
+		font-size: 1.75rem;
 	}
 
 	.section-title p {
-		font-size: 14px;
+		font-size: .875rem;
 	}
 
 	#clouds {
@@ -191,7 +191,7 @@ li {
 	}
 
 	.filter-button-group button {
-		padding: 12px 27px;
+		padding: .75rem 1.6875rem;
 	}
 
 	.filter-button-group {
@@ -199,7 +199,7 @@ li {
 	}
 
 	.post-box {
-		margin-bottom: 30px;
+		margin-bottom: 1.875rem;
 	}
 
 	.footer-distributed .footer-left {
@@ -207,7 +207,7 @@ li {
 	}
 
 	.pricingTable .pricing-content li {
-		font-size: 14px;
+		font-size: .875rem;
 	}
 }
 
@@ -257,23 +257,23 @@ li {
 	}
 
 	.heading h1 {
-		font-size: 28px;
+		font-size: 1.75rem;
 	}
 
 	.heading p {
-		font-size: 14px;
+		font-size: .875rem;
 	}
 
 	.cd-headline.clip span {
-		font-size: 20px;
+		font-size: 1.25rem;
 	}
 
 	.section-title h3 {
-		font-size: 28px;
+		font-size: 1.75rem;
 	}
 
 	.section-title p {
-		font-size: 14px;
+		font-size: .875rem;
 	}
 
 	#clouds {
@@ -281,11 +281,11 @@ li {
 	}
 
 	.message-box {
-		margin-bottom: 30px;
+		margin-bottom: 1.875rem;
 	}
 
 	.filter-button-group button {
-		padding: 12px 27px;
+		padding: .75rem 1.6875rem;
 	}
 
 	.filter-button-group {
@@ -293,7 +293,7 @@ li {
 	}
 
 	.post-box {
-		margin-bottom: 30px;
+		margin-bottom: 1.875rem;
 	}
 
 	.footer-distributed .footer-left {
@@ -399,7 +399,7 @@ li {
 	}
 
 	.banner h2::after {
-		height: 26px;
+		height: 1.625rem;
 	}
 
 	.right-box-pro {
