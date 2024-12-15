@@ -1850,7 +1850,7 @@ hr.invis1 {
     text-align: center;
     overflow: hidden;
     position: relative;
-    border: .625rem solid #f9ba1f;
+    /* border: .625rem solid #f9ba1f; */
 }
 
 .gallery-single img {
