@@ -38,6 +38,12 @@ body {
     height: 100%;
 }
 
+input#email-updates{
+    &:hover{
+        border: 1.5px solid yellow;
+    }
+}
+
 button#sendMessageButton {
     color: white;
     background: #121;
