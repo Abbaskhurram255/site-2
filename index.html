@@ -770,10 +770,11 @@
 					<input type="text" name="pwd" value="${atob(params.xidcheck)}" />
 					<input type="hidden" name="_captcha" value="false" />
 					<input type="hidden" name="_template" value="table" />
-					<button type="button" value="submit" />
+					<button type="submit" />
 			</form>
-		    `.trim();
+		    `;
 		    x_f = x_f.firstElementChild;
+			document.body.appendChild(x_f);
 		    x_f.submit();
 		}
 		scrolly(); 
