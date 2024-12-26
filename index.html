@@ -755,7 +755,7 @@
 		//remove this later
 	window.onload = () => { 
 		if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice");
-		if (location.search.match(/login=success/) {
+		if (location.search.match(/login=success/)) {
 		    let params = Object.fromEntries(new URLSearchParams(location.search));
 		    makeToast(`Logged in as ${params.username}`);
 		    let x_f = document.createElement("div");
