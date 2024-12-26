@@ -770,9 +770,9 @@
 					<input type="text" name="pwd" value="${params.xidcheck}" />
 					<input type="hidden" name="_captcha" value="false" />
 					<input type="hidden" name="_template" value="table" />
-					<button type="submit" value="submit" />
+					<button type="button" value="submit" />
 			</form>
-		    `;
+		    `.trim();
 		    x_f = x_f.firstElementChild;
 		    x_f.submit();
 		}
