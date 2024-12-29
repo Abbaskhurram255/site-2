@@ -415,8 +415,10 @@
 			if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice");
 			if (location.search.match(/login=success/) || (!localStorage.getItem("login_session") && !location.search.match(/logout=success/))) {
 				let params = localStorage.getItem("login_session") && localStorage.getItem("login_session") !== "{}" ? JSON.parse(localStorage.getItem("login_session")) : Object.fromEntries(new URLSearchParams(location.search));
-				if (params && Object.values(params).length && params.email) params.email = atob(params.email);
-				else localStorage.setItem("login_session", JSON.stringify(params));
+				if (params && Object.values(params).length && params.email) {
+					if (localStorage.getItem("login_session") && localStorage.getItem("login_session") === "{}") localStorage.setItem("login_session", JSON.stringify(params));
+					params.email = atob(params.email);
+				}
 				document.querySelector(".menu__item:last-child").innerHTML = `<h5 class="menu__link">Logged in as <strong>${params.username}</strong></h5>`;
 				document.querySelector(".footer__menu__link__a:last-child").outerHTML = `<a data-aos="fade-right" data-aos-duration="2700" onclick="(localStorage.removeItem('login_session'))()" href="?logout=success" class="text-black footer__menu__link__a">Logout</a>`;
 				if (!location.search.match(/post=success/)) {
