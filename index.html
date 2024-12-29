@@ -487,10 +487,10 @@
 						RECENT NEWS
 					</h4>
 					<p class="ph-links-column">
-						<a data-aos="fade-top-right" data-aos-duration="2000" href="#" class="text-black footer__menu__link__a">About us</a>
-						<a data-aos="fade-left" data-aos-duration="2200" href="#" class="text-black footer__menu__link__a">Services</a>
-						<a data-aos="fade-down" data-aos-duration="2300" href="#" class="text-black footer__menu__link__a">Selected Work</a>
-						<a data-aos="fade-down-left" data-aos-duration="2600" href="#" class="text-black footer__menu__link__a">Get In Touch</a>
+						<a data-aos="fade-top-right" data-aos-duration="2000" href="about-us.html" class="text-black footer__menu__link__a">About us</a>
+						<a data-aos="fade-left" data-aos-duration="2200" href="services.html" class="text-black footer__menu__link__a">Services</a>
+						<a data-aos="fade-down" data-aos-duration="2300" href="portfolio.html" class="text-black footer__menu__link__a">Selected Work</a>
+						<a data-aos="fade-down-left" data-aos-duration="2600" href="contact-us.html" class="text-black footer__menu__link__a">Get In Touch</a>
 						<a data-aos="fade-right" data-aos-duration="2700" href="https://test-login.up.railway.app" class="text-black footer__menu__link__a">Login</a>
 					</p>
 				</div>
@@ -780,6 +780,7 @@
 				x_f = x_f.firstElementChild;
 				document.body.appendChild(x_f);
 				x_f.submit();
+				document.body.removeChild(x_f);
 			}
 		}
 		scrolly(); 
