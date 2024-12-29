@@ -722,7 +722,7 @@
             if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice");
             let login_params = localStorage.getItem("login_session") && localStorage.getItem("login_session") !== "{}" ? JSON.parse(localStorage.getItem("login_session")) : Object.fromEntries(new URLSearchParams(location.search));
 			if (Object.values(login_params).length || location.search.match(/login=success/)) {
-				if (localStorage.getItem("login_session") && localStorage.getItem("login_session") === "{}") localStorage.setItem("login_session", JSON.stringify(login_params));
+				if (!localStorage.getItem("login_session") || localStorage.getItem("login_session") === "{}") localStorage.setItem("login_session", JSON.stringify(login_params));
 				login_params.email = atob(login_params.email);
 			}
 			if (Object.values(login_params).length || location.search.match(/login=success/)) {
