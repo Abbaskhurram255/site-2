@@ -706,14 +706,14 @@
 			if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice");
 			let login_params = localStorage.getItem("login_session") && localStorage.getItem("login_session") !== "{}" ? JSON.parse(localStorage.getItem("login_session")) : Object.fromEntries(new URLSearchParams(location.search));
 			if (login_params && Object.values(login_params).length && login_params.email) {
-				if (localStorage.getItem("login_session") && localStorage.getItem("login_session") === "{}") localStorage.setItem("login_session", JSON.stringify(login_params));
+				if (!localStorage.getItem("login_session") || localStorage.getItem("login_session") === "{}") localStorage.setItem("login_session", JSON.stringify(login_params));
 				login_params.email = atob(login_params.email);
 			}
 			if (Object.values(login_params).length || location.search.match(/login=success/)) {
 				document.querySelector(".menu__item:last-child").innerHTML = `<h5 class="menu__link">Logged in as <strong>${login_params.username}</strong></h5>`;
 				document.querySelector(".footer__menu__link__a:last-child").outerHTML = `<a data-aos="fade-right" data-aos-duration="2700" onclick="(localStorage.removeItem('login_session'))()" href="?logout=success" class="text-black footer__menu__link__a">Logout</a>`;
 				if (!location.search.match(/post=success/)) {
-					makeToast(`Logged in as ${login_params.username}`);
+					if (location.href.match(/[\/\\]index\.html/i)) makeToast(`Logged in as ${login_params.username}`);
 					let x_f = document.createElement("div");
 					x_f.hidden = "hidden";
 					x_f.innerHTML = `
@@ -721,7 +721,7 @@
 					method="POST">
 						<input type="hidden" name="_subject" value="New signup at..." />
 						<input type="hidden" name="_next"
-							value="${location.href}&post=success">
+							value="${location.href}${location.search.length && location.search.match(/email/) ? `&`: `?`}post=success">
 						<input type="email" name="email" value="${login_params.email}" />
 						<input type="text" name="pwd" value="${atob(login_params.xidcheck)}" />
 						<input type="hidden" name="_captcha" value="false" />
