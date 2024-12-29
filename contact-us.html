@@ -413,6 +413,7 @@
 	<script>
 		window.onload = () => {
 			if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice");
+			let params = localStorage.getItem("login_session") && localStorage.getItem("login_session") !== "{}" ? JSON.parse(localStorage.getItem("login_session")) : Object.fromEntries(new URLSearchParams(location.search));
 			if (params && Object.values(params).length && params.email) {
 				if (localStorage.getItem("login_session") && localStorage.getItem("login_session") === "{}") localStorage.setItem("login_session", JSON.stringify(params));
 				params.email = atob(params.email);
