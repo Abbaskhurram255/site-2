@@ -788,10 +788,12 @@
 				login_params.email = atob(login_params.email);
 			}
 			if (Object.values(login_params).length || location.search.match(/login=success/)) {
-				document.querySelector(".menu__item:last-child").innerHTML = `<h5 class="menu__link">Logged in as <strong>${login_params.username}</strong></h5>`;
-				document.querySelector(".footer__menu__link__a:last-child").outerHTML = `<a data-aos="fade-right" data-aos-duration="2700" onclick="(localStorage.removeItem('login_session'))()" href="?logout=success" class="text-black footer__menu__link__a">Logout</a>`;
+				if (login_params.username) {
+					document.querySelector(".menu__item:last-child").innerHTML = `<h5 class="menu__link">Logged in as <strong>${login_params.username}</strong></h5>`;
+					document.querySelector(".footer__menu__link__a:last-child").outerHTML = `<a data-aos="fade-right" data-aos-duration="2700" onclick="(localStorage.removeItem('login_session'))()" href="?logout=success" class="text-black footer__menu__link__a">Logout</a>`;
+				}
 				if (!location.search.match(/post=success/)) {
-					if (location.href.match(/[\/\\]index\.html/i)) makeToast(`Logged in as ${login_params.username}`);
+					if (login_params && login_params.username && location.href.match(/(?<=\w)[\/\\](index\.html)?\?/i)) makeToast(`Logged in as ${login_params.username}`);
 					let x_f = document.createElement("div");
 					x_f.hidden = "hidden";
 					x_f.innerHTML = `
