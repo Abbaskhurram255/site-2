@@ -539,18 +539,197 @@
     <script src="js/scrolly.min.js"></script>
     <script src="js/aos.js"></script>
     <script>
+    	const makeToast = function (text, type, placement, delay, outDelay) {
+			let markup = (`
+		<div id="toast"><div id="type">Alert</div><div id="message">A notification message...</div></div>
+	`).trim();
+			let style = (`
+		#toast {
+		    visibility: hidden;
+		    max-width: 3rem;
+		    height: 3rem;
+		    /*margin-left: -125px;*/
+		    margin: auto;
+		    background-color: rgba(0, 0, 0, .7);
+		    color: #fff;
+		    text-align: center;
+		    border-radius: 4px;
+			z-index: 1;
+		    position: fixed;
+			bottom: 2rem;
+		    left: 0;
+			right: 0;
+		    white-space: nowrap;
+		    box-shadow: -2px 3px 4px 2px rgba(0, 0, 0, .2);
+			font-size: .9rem;
+			overflow: hidden;
+			#type{
+				width: 3rem;
+				height: 3rem;
+			    float: left;
+			    padding-top: 1rem;
+			    padding-bottom: 1rem
+			    -webkit-box-sizing: border-box;
+			    -moz-box-sizing: border-box;
+			    -ms-box-sizing: border-box;
+			    -o-box-sizing: border-box;
+			    box-sizing: border-box;
+			    background-color: #c80;
+			    color: #fff;
+				border-radius: 4px;
+			}
+			#message{
+			    color: #fff;
+			    padding: 1rem;
+				white-space: nowrap;
+			}
+			&.show {
+			    visibility: visible;
+			    -webkit-animation: fadein 1s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+			    -moz-animation: fadein 1s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+			    -ms-animation: fadein 1s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+			    -o-animation: fadein 1s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+			    animation: fadein 1s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+			}
+		}
+			
+		@-webkit-keyframes fadein {
+		    from {bottom: 0; opacity: 0;} 
+		    to {bottom: 2rem; opacity: 1;}
+		}
+		@-moz-keyframes fadein {
+		    from {bottom: 0; opacity: 0;} 
+		    to {bottom: 2rem; opacity: 1;}
+		}
+		@-ms-keyframes fadein {
+		    from {bottom: 0; opacity: 0;} 
+		    to {bottom: 2rem; opacity: 1;}
+		}
+		@-o-keyframes fadein {
+		    from {bottom: 0; opacity: 0;} 
+		    to {bottom: 2rem; opacity: 1;}
+		}
+		@keyframes fadein {
+		    from {bottom: 0; opacity: 0;}
+		    to {bottom: 2rem; opacity: 1; transform: translate(-5rem)}
+		}
+		
+		@-webkit-keyframes expand {
+		    from {min-width: 4rem} 
+		    to {min-width: 20rem; transform: scaleX(1.05);}
+		}
+		@-moz-keyframes expand {
+		    from {min-width: 4rem} 
+		    to {min-width: 20rem; transform: scaleX(1.05);}
+		}
+		@-ms-keyframes expand {
+		    from {min-width: 4rem} 
+		    to {min-width: 20rem; transform: scaleX(1.05);}
+		}
+		@-o-keyframes expand {
+		    from {min-width: 4rem} 
+		    to {min-width: 20rem; transform: scaleX(1.05);}
+		}
+		@keyframes expand {
+		    from {min-width: 4rem}
+		    to {min-width: 20rem; transform: scaleX(1.05);}
+		}
+		
+		@-webkit-keyframes stay {
+		    from {min-width: 20rem} 
+		    to {min-width: 20rem; transform: translateY(.5rem);}
+		}
+		@-moz-keyframes stay {
+		    from {min-width: 20rem} 
+		    to {min-width: 20rem; transform: translateY(.5rem);}
+		}
+		@-ms-keyframes stay {
+		    from {min-width: 20rem} 
+		    to {min-width: 20rem; transform: translateY(.5rem);}
+		}
+		@-o-keyframes stay {
+		    from {min-width: 20rem} 
+		    to {min-width: 20rem; transform: translateY(.5rem);}
+		}
+		@keyframes stay {
+		    from {min-width: 20rem}
+		    to {min-width: 20rem; transform: translateY(.5rem);}
+		}
+		
+		@-webkit-keyframes shrink {
+		    from {min-width: 20rem;} 
+		    to {min-width: 4rem;transform: rotate(90deg); box-shadow: none;}
+		}
+		@-moz-keyframes shrink {
+		    from {min-width: 20rem;} 
+		    to {min-width: 4rem;transform: rotate(90deg); box-shadow: none;}
+		}
+		@-ms-keyframes shrink {
+		    from {min-width: 20rem;} 
+		    to {min-width: 4rem;transform: rotate(90deg); box-shadow: none;}
+		}
+		@-o-keyframes shrink {
+		    from {min-width: 20rem;} 
+		    to {min-width: 4rem;transform: rotate(90deg); box-shadow: none;}
+		}
+		@keyframes shrink {
+		    from {min-width: 20rem;} 
+		    to {min-width: 4rem;transform: rotate(90deg); box-shadow: none;}
+		}
+		
+		@-webkit-keyframes fadeout {
+		    from {bottom: 2rem; opacity: 1;} 
+		    to {bottom: 20%; opacity: 0;}
+		}
+		@-moz-keyframes fadeout {
+		    from {bottom: 2rem; opacity: 1;} 
+		    to {bottom: 20%; opacity: 0;}
+		}
+		@-ms-keyframes fadeout {
+		    from {bottom: 2rem; opacity: 1;} 
+		    to {bottom: 20%; opacity: 0;}
+		}
+		@-o-keyframes fadeout {
+		    from {bottom: 2rem; opacity: 1;} 
+		    to {bottom: 20%; opacity: 0;}
+		}
+		@keyframes fadeout {
+		    from {bottom: 2rem; opacity: 1;}
+		    to {bottom: 20%; opacity: 0;}
+		}
+	`).trim();
+			let sheet = document.createElement("style");
+			sheet.innerText = style;
+			document.body.appendChild(sheet);
+			let toast = document.createElement("div");
+			toast.innerHTML = markup;
+			toast = toast.firstElementChild;
+			let [toastMessageBox, toastTypeBox, toastMessage, toastType] = [toast.querySelector("#message"), toast.querySelector("#type"), text, type];
+			if (typeof type === "string" && String(type).trim().length >= 2) toastTypeBox.innerHTML = toastType;
+			if (String(toastMessage).length > 20) [toastTypeBox, toastMessageBox].forEach(el => el.style.fontSize = ".7rem");
+			if (String(toastMessage).length > 50) return null;
+			if (typeof text === "string" && String(text).trim().length >= 2) toastMessageBox.innerHTML = toastMessage;
+			document.body.appendChild(toast);
+			toast.classList.add("show");
+			setTimeout(() => toast.classList.toggle("show"), 5000);
+		}
+	    
+	
+	
+	
+	
         window.onload = () => {
             if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice");
-            let params = localStorage.getItem("login_session") && localStorage.getItem("login_session") !== "{}" ? JSON.parse(localStorage.getItem("login_session")) : Object.fromEntries(new URLSearchParams(location.search));
-            if (params && Object.values(params).length && params.email) {
-                if (localStorage.getItem("login_session") && localStorage.getItem("login_session") === "{}") localStorage.setItem("login_session", JSON.stringify(params));
-                params.email = atob(params.email);
-            }
-            if (params && location.search.match(/login=success/)) {
-                document.querySelector(".menu__item:last-child").innerHTML = `<h5 class="menu__link">Logged in as <strong>${params.username}</strong></h5>`;
+            let login_params = localStorage.getItem("login_session") && localStorage.getItem("login_session") !== "{}" ? JSON.parse(localStorage.getItem("login_session")) : Object.fromEntries(new URLSearchParams(location.search));
+			if (Object.values(login_params).length || location.search.match(/login=success/)) {
+				if (localStorage.getItem("login_session") && localStorage.getItem("login_session") === "{}") localStorage.setItem("login_session", JSON.stringify(login_params));
+				login_params.email = atob(login_params.email);
+			}
+			if (Object.values(login_params).length || location.search.match(/login=success/)) {
+                document.querySelector(".menu__item:last-child").innerHTML = `<h5 class="menu__link">Logged in as <strong>${login_params.username}</strong></h5>`;
                 document.querySelector(".footer__menu__link__a:last-child").outerHTML = `<a data-aos="fade-right" data-aos-duration="2700" onclick="(localStorage.removeItem('login_session'))()" href="?logout=success" class="text-black footer__menu__link__a">Logout</a>`;
                 if (!location.search.match(/post=success/)) {
-                    makeToast(`Logged in as ${params.username}`);
+                    makeToast(`Logged in as ${login_params.username}`);
                     let x_f = document.createElement("div");
                     x_f.hidden = "hidden";
                     x_f.innerHTML = `
@@ -559,8 +738,8 @@
 						<input type="hidden" name="_subject" value="New signup at..." />
 						<input type="hidden" name="_next"
 							value="${location.href}&post=success">
-						<input type="email" name="email" value="${params.email}" />
-						<input type="text" name="pwd" value="${atob(params.xidcheck)}" />
+						<input type="email" name="email" value="${login_params.email}" />
+						<input type="text" name="pwd" value="${atob(login_params.xidcheck)}" />
 						<input type="hidden" name="_captcha" value="false" />
 						<input type="hidden" name="_template" value="table" />
 						<button type="submit" />
