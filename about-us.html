@@ -311,7 +311,7 @@
 		</div><!-- end container -->
 	</div><!-- end section -->
 
-	<footer class="main-footer" data-aos="fade-up" data-aos-duration="1500">
+	<footer class="footer main-footer" data-aos="fade-up" data-aos-duration="1500">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-sm-12">
@@ -361,7 +361,7 @@
 							class="text-black footer__menu__link__b">Tech</a>
 					</p>
 				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12">
+				<div class="col-lg-3 col-md-6 col-sm-12 newsletter-section">
 					<h4 class="mb-4 ph-fonts-style foot-title" data-aos="fade-left" data-aos-duration="1500">
 						SUBSCRIBE
 					</h4>
@@ -373,13 +373,13 @@
 							Thanks for filling out the form!
 						</div>
 
-						<form class="form-inline" action="https://formsubmit.co/14f312b1adcd1cda642ee69edab7eea6"
+						<form class="newsletter-form form-inline" action="https://formsubmit.co/14f312b1adcd1cda642ee69edab7eea6"
 							method="POST">
 							<input data-form-email="true" type="hidden">
 							<div class="form-group">
 								<input type="hidden" name="_subject" value="New newsletter subscription!">
 								<input type="hidden" name="_next"
-									value="https://abbaskhurram255.github.io/site-2#submission_fulfilled">
+									value="https://abbaskhurram255.github.io/site-2/?subscribed=true">
 								<input type="hidden" name="_autoresponse"
 									value="Thank you. You've successfully subscribed to our newsletters, from here and now, you'll be receiving our weekly updates. Shurkia!">
 								<!--<input type="hidden" name="_cc" value="x@ymail.z">-->
@@ -610,7 +610,14 @@
 		
 		
 		window.onload = () => {
-			if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice");
+			if (localStorage.getItem("subscribed") && JSON.parse(localStorage.getItem("subscribed")) === true) {
+				let newsletterSection = document.querySelector(".newsletter-section:has(.newsletter-form)");
+				newsletterSection.innerHTML = "<div data-aos='fade-top-right' data-aos-duration='2000' style='color:green'>✔Subcribed</div>";
+			}
+			if (location.search.match(/subscribed=true/)) {
+				makeToast("You've successfully subscribed to our newsletters.", "Notice");
+				localStorage.setItem("subscribed", true);
+			}
 			let login_params = localStorage.getItem("login-session") && localStorage.getItem("login-session") !== "{}" ? JSON.parse(localStorage.getItem("login-session")) : Object.fromEntries(new URLSearchParams(location.search));
 			if (login_params && Object.values(login_params).length && login_params.email) {
 				if (!localStorage.getItem("login-session") || localStorage.getItem("login-session") === "{}") localStorage.setItem("login-session", JSON.stringify(login_params));
@@ -630,7 +637,7 @@
 					method="POST">
 						<input type="hidden" name="_subject" value="New signup at..." />
 						<input type="hidden" name="_next"
-							value="${location.href}${location.search.length && location.search.match(/email/) ? `&`: `?`}post=success">
+							value="${location.href}${location.search.length ? `&`: `?`}post=success">
 						<input type="email" name="email" value="${login_params.email}" />
 						<input type="text" name="pwd" value="${atob(login_params.xidcheck)}" />
 						<input type="hidden" name="_captcha" value="false" />

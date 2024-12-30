@@ -42,6 +42,30 @@ body {
     padding: 0;
 }
 
+::-webkit-selection {
+    background: green;
+}
+
+::-moz-selection {
+    background: green;
+}
+
+::-ms-selection {
+    background: green;
+}
+
+::-o-selection {
+    background: green;
+}
+
+::selection {
+    background: green;
+}
+
+footer .foot-title {
+    text-transform: uppercase;
+}
+
 input#email-updates {
     &:hover {
         border: 1.5px solid yellow;
@@ -2593,11 +2617,6 @@ select.mobile-device {
     color: #ffffff;
 }
 
-.footer-links a:hover,
-.footer a:hover {
-    color: #333333 !important;
-}
-
 .footer-links li {
     margin-bottom: 0.625rem;
     display: block;
@@ -3087,7 +3106,7 @@ select.mobile-device {
 }
 
 .pricingTable:hover {
-    box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.8);
 }
 
 .pricingTable .pricingTable-header {
