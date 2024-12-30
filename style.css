@@ -483,10 +483,12 @@ a img.aligncenter {
     font-size: 1.875rem;
     padding: 0.9375rem 0;
     font-weight: 300;
-    color: white;
+    color: #fff;
     text-decoration: none;
-    color: white;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    &.selected{
+        color: #020;
+    }
 }
 
 .menu__link:hover {
