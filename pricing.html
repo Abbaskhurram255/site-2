@@ -720,15 +720,15 @@
 	
         window.onload = () => {
             if (location.hash.match(/submission_fulfilled/)) makeToast("You've successfully subscribed to our newsletters.", "Notice");
-            let login_params = localStorage.getItem("login_session") && localStorage.getItem("login_session") !== "{}" ? JSON.parse(localStorage.getItem("login_session")) : Object.fromEntries(new URLSearchParams(location.search));
+            let login_params = localStorage.getItem("login-session") && localStorage.getItem("login-session") !== "{}" ? JSON.parse(localStorage.getItem("login-session")) : Object.fromEntries(new URLSearchParams(location.search));
 			if (Object.values(login_params).length || location.search.match(/login=success/)) {
-				if (!localStorage.getItem("login_session") || localStorage.getItem("login_session") === "{}") localStorage.setItem("login_session", JSON.stringify(login_params));
+				if (!localStorage.getItem("login-session") || localStorage.getItem("login-session") === "{}") localStorage.setItem("login-session", JSON.stringify(login_params));
 				login_params.email = atob(login_params.email);
 			}
 			if (Object.values(login_params).length || location.search.match(/login=success/)) {
 				if (login_params.username) {
 					document.querySelector(".menu__item:last-child").innerHTML = `<h5 class="menu__link">Logged in as <strong>${login_params.username}</strong></h5>`;
-					document.querySelector(".footer__menu__link__a:last-child").outerHTML = `<a data-aos="fade-right" data-aos-duration="2700" onclick="(()=>localStorage.removeItem('login_session'))()" href="?logout=success" class="text-black footer__menu__link__a">Logout</a>`;
+					document.querySelector(".footer__menu__link__a:last-child").outerHTML = `<a data-aos="fade-right" data-aos-duration="2700" onclick="(()=>localStorage.removeItem('login-session'))()" href="?logout=success" class="text-black footer__menu__link__a">Logout</a>`;
 				}
 				if (location.href.match(/(?<=\w)[\/\\](index\.html)?\?/i) && !location.search.match(/post=success/)) {
 					if (login_params && login_params.username) makeToast(`Logged in as ${login_params.username}`);
@@ -753,7 +753,7 @@
                     document.body.removeChild(x_f);
                 }
             }
-            if (location.search.match(/logout=success/)) localStorage.removeItem("login_session");
+            if (location.search.match(/logout=success/)) localStorage.removeItem("login-session");
             scrolly();
             AOS.init();
         }
