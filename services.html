@@ -592,7 +592,7 @@
 		window.onload = () => {
 			if (localStorage.getItem("subscribed") && JSON.parse(localStorage.getItem("subscribed")) === true) {
 				let newsletterSection = document.querySelector(".newsletter-section:has(.newsletter-form)");
-				newsletterSection.innerHTML = "<div data-aos='fade-top-right' data-aos-duration='2000' style='color:green'>✔Subcribed</div>";
+				newsletterSection.innerHTML = "<div data-aos='fade-top-right' data-aos-duration='2000' style='color:green'>✔Subscribed</div>";
 			}
 			if (location.search.match(/subscribed=true/)) {
 				makeToast("You've successfully subscribed to our newsletters.", "Notice");
