@@ -3123,13 +3123,17 @@ select.mobile-device {
 }
 
 #pricing > .container > .row > div[class$='-plan'] :is(text, h4).plan-tag {
-    /* -webkit-animation: ;
-    -moz-animation: ;
-    -ms-animation: ;
-    -o-animation: ; */
+    -webkit-animation: colorBlink 2s infinite linear;
+    -moz-animation: colorBlink 2s infinite linear;
+    -ms-animation: colorBlink 2s infinite linear;
+    -o-animation: colorBlink 2s infinite linear;
     animation: colorBlink 2s infinite linear;
     &:hover{
         color: yellow;
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        -o-animation: none;
         animation: none;
     }
 }
