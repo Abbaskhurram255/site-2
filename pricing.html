@@ -106,10 +106,10 @@
             </div><!-- end title -->
 
             <div class="row no-gutters pricing-table my-3 mb-5">
-                <div class="col-md-4 pr-2">
+                <div class="col-md-4 pr-2 basic-plan">
                     <div class="list-group text-center my-3">
                         <div class="list-group-item text-white bg-dark">
-                            <h4 class="text-center">Basic</h4>
+                            <h4 class="text-center plan-tag">Basic</h4>
                         </div>
                         <div class="list-group-item text-uppercase font-weight-bold">
                             ~Rs 5k/shoot
@@ -125,14 +125,14 @@
                         </a>
                         <div class="list-group-item">
                             <button
-                                class="btn btn-secondary hover-effect-new btn-lg btn-block text-truncate"><span>Sign-up</span></button>
+                                class="btn btn-secondary hover-effect-new btn-lg btn-block text-truncate"><span>Buy Now</span></button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 standard-plan">
                     <div class="list-group text-center bg-alt">
                         <div href="#" class="list-group-item text-white bg-dark">
-                            <h4 class="text-center">Standard<br></h4>
+                            <h4 class="text-center plan-tag">Standard<br></h4>
                         </div>
                         <div class="list-group-item text-uppercase font-weight-bold">
                             ~Rs 10k/shoot
@@ -156,10 +156,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 pl-2">
+                <div class="col-md-4 pl-2 managed-plan">
                     <div class="list-group text-center my-3">
                         <div href="#" class="list-group-item text-white bg-dark">
-                            <h4 class="text-center">Managed</h4>
+                            <h4 class="text-center plan-tag">Managed</h4>
                         </div>
                         <div class="list-group-item text-uppercase font-weight-bold">
                             Rs ~15k/shoot
@@ -177,22 +177,21 @@
                             24/7 Support
                         </a>
                         <div class="list-group-item">
-                            <button class="btn btn-secondary hover-effect-new btn-lg btn-block text-truncate"><span>Contact
-                                    Us</span></button>
+                            <button class="btn btn-secondary hover-effect-new btn-lg btn-block text-truncate"><span>Buy Now</span></button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 silver-plan">
                     <div class="pricingTable">
                         <div class="pricingTable-header">
                             <svg x="0px" y="0px" viewBox="0 0 260 180">
                                 <path fill="#f9ba1f" stroke-dasharray="5,5" stroke="#fff" d="M0,180.928c0,0,0-108.489,0-143.333C1.637,23.582,8.907,0,42.088,0C75.271,0,260,0,260,0v72.841
         	                    c0,0-2.667,37.424-43.877,45.563C177.693,125.992,6.26,130.42,0,180.928z"></path>
-                                <text transform="matrix(1.0078 0 0 1 75.9497 33.8887)" fill="#fff"
-                                    font-size="23.726">STANDARD</text>
+                                <text class="plan-tag" transform="matrix(1.0078 0 0 1 75.9497 33.8887)" fill="#fff"
+                                    font-size="23.726">SILVER</text>
                                 <g>
                                     <text transform="matrix(1.0078 0 0 1 98.5996 65.9434)" fill="#fff"
                                         font-size="13">Rs </text>
@@ -226,13 +225,13 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 business-plan">
                     <div class="pricingTable">
                         <div class="pricingTable-header">
                             <svg x="0px" y="0px" viewBox="0 0 260 180">
                                 <path fill="#f9ba1f" stroke-dasharray="5,5" stroke="#fff" d="M0,180.928c0,0,0-108.489,0-143.333C1.637,23.582,8.907,0,42.088,0C75.271,0,260,0,260,0v72.841
         	                    c0,0-2.667,37.424-43.877,45.563C177.693,125.992,6.26,130.42,0,180.928z"></path>
-                                <text transform="matrix(1.0078 0 0 1 75.9497 33.8887)" fill="#fff"
+                                <text class="plan-tag" transform="matrix(1.0078 0 0 1 75.9497 33.8887)" fill="#fff"
                                     font-size="23.726">BUSINESS</text>
                                 <g>
                                     <text transform="matrix(1.0078 0 0 1 98.5996 65.9434)" fill="#fff"
@@ -267,13 +266,13 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 premium-plan">
                     <div class="pricingTable">
                         <div class="pricingTable-header">
                             <svg x="0px" y="0px" viewBox="0 0 260 180">
                                 <path fill="#f9ba1f" stroke-dasharray="5,5" stroke="#fff" d="M0,180.928c0,0,0-108.489,0-143.333C1.637,23.582,8.907,0,42.088,0C75.271,0,260,0,260,0v72.841
         	                    c0,0-2.667,37.424-43.877,45.563C177.693,125.992,6.26,130.42,0,180.928z"></path>
-                                <text transform="matrix(1.0078 0 0 1 75.9497 33.8887)" fill="#fff"
+                                <text class="plan-tag" transform="matrix(1.0078 0 0 1 75.9497 33.8887)" fill="#fff"
                                     font-size="23.726">PREMIUM</text>
                                 <g>
                                     <text transform="matrix(1.0078 0 0 1 98.5996 65.9434)" fill="#fff"
@@ -766,6 +765,7 @@
             scrolly();
             AOS.init();
         }
+        document.querySelectorAll("#pricing > .container > .row > div[class$='-plan'] :is(text, h4).plan-tag")
     </script>
 
 </body>

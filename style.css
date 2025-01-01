@@ -3122,6 +3122,24 @@ select.mobile-device {
     list-style: none;
 }
 
+#pricing > .container > .row > div[class$='-plan'] :is(text, h4).plan-tag {
+    /* -webkit-animation: ;
+    -moz-animation: ;
+    -ms-animation: ;
+    -o-animation: ; */
+    animation: colorBlink 2s infinite linear;
+    &:hover{
+        color: yellow;
+        animation: none;
+    }
+}
+@keyframes colorBlink {
+    0%{color:white}
+    33%{color:red}
+    33%{color:orangered}
+    99%{color:yellow}
+}
+
 .pricingTable .pricing-content li {
     font-size: 1.25rem;
     color: #fff;
